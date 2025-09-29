@@ -370,28 +370,127 @@ print (x)
 # Syntax
     string.find(value, start, end)
     Parameter Values
-    Parameter	Description
-    value	Required. The value to search for
-    start	Optional. Where to start the search. Default is 0
-    end	Optional. Where to end the search. Default is to the end of the string
 
+# Parameter |	Description
+#    value:-	Required. The value to search for
+#    start	    Optional. Where to start the search. Default is 0
+#    end   	    Optional. Where to end the search. Default is to the end of the string
+
+# (ex):-
+     txt = "Hello, welcome to my world."
+    x = txt.find("e", 5, 10)
+    print(x)
+
+#  format()  | 	Formats specified values in a string
+# (eg):-
+        txt = "For only {price:.2f} dollars!"
+        print(txt.format(price = 49))
+
+# Syntax
+    string.format(value1, value2...)
+
+     txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+    txt2 = "My name is {0}, I'm {1}".format("John",36)
+    txt3 = "My name is {}, I'm {}".format("John",36)
+
+#  format_map()	 |   Formats specified values in a string
+    The format_map() method formats the specified values of a dictionary and insert them inside the string's placeholders.
+
+# (eg):-
+        myvar = {"name" : "Jane", "age" : 36}
+        txt = "Happy birthday {name} you are now on level {age}!"
+        print(txt.format_map(myvar))
+
+# The format_map()  |  method returns the formatted string.
+
+# index()   |	Searches the string for a specified value and returns the position of where it was found
+# (eg):-
+
+1. The index() method finds the first occurrence of the specified value.
+2. The index() method raises an exception if the value is not found.
+3. The index() method is almost the same as the find() method, the only difference is that the find() method returns -1 if the value is not found. (See example below)
+
+# Syntax
+string.index(value, start, end)
+
+# (eg):-
+        txt = "Hello, welcome to my world."
+        x = txt.index("e", 5, 10)
+        print(x)
      
-    format()	Formats specified values in a string
-    format_map()	Formats specified values in a string
-    index()	Searches the string for a specified value and returns the position of where it was found
-    isalnum()	Returns True if all characters in the string are alphanumeric
-    isalpha()	Returns True if all characters in the string are in the alphabet
+#  isalnum()  |	Returns True if all characters in the string are alphanumeric
+
+# (eg):-
+        txt = "Company12"
+        x = txt.isalnum()
+        print(x)
+
+# isalpha()	 | Returns True if all characters in the string are in the alphabet
+
+# (eg):-
+        txt = "CompanyX"
+        x = txt.isalpha()
+        print(x)
+
     isascii()	Returns True if all characters in the string are ascii characters
-    isdecimal()	Returns True if all characters in the string are decimals
+
+#  isdecimal() |  Returns True if all characters in the string are decimals
+ 
+# Definition and Usage
+    The isdecimal() method returns True if all the characters are decimals (0-9).
+
+    This method can also be used on unicode objects. See example below.
+
+# Syntax
+string.isdecimal()
+
+
     isdigit()	Returns True if all characters in the string are digits
-    isidentifier()	Returns True if the string is an identifier
+
+
+#   isidentifier()	|  Returns True if the string is an identifier
+   Check if the string is a valid identifier:
+
+# (eg):- 
+   txt = "Demo"
+   x = txt.isidentifier()
+   print(x)
+
     islower()	Returns True if all characters in the string are lower case
     isnumeric()	Returns True if all characters in the string are numeric
-    isprintable()	Returns True if all characters in the string are printable
-    isspace()	Returns True if all characters in the string are whitespaces
+
+# isprintable()	 |  Returns True if all characters in the string are printable
+
+#  Definition and Usage
+The isprintable() method returns True if all the characters are printable, otherwise False.
+
+# Example of none printable character can be carriage return and line feed.
+     
+#  (eg):- 
+        txt = "Hello!\nAre you #1?"
+        x = txt.isprintable()
+        print(x)   
+
+#  isspace() |	Returns True if all characters in the string are whitespaces
+
+# Definition and Usage
+    The isspace() method returns True if all the characters in a string are whitespaces, otherwise False.
+
+# Syntax
+string.isspace()
+
+
     istitle()	Returns True if the string follows the rules of a title
     isupper()	Returns True if all characters in the string are upper case
-    join()	Joins the elements of an iterable to the end of the string
+
+#  join() | Joins the elements of an iterable to the end of the string
+   
+# (eg):-
+        myTuple = ("John", "Peter", "Vicky")
+        x = "#".join(myTuple)
+        print(x)
+
+
     ljust()	Returns a left justified version of the string
     lower()	Converts a string into lower case
     lstrip()	Returns a left trim version of the string
@@ -404,19 +503,137 @@ print (x)
     rpartition()	Returns a tuple where the string is parted into three parts
     rsplit()	Splits the string at the specified separator, and returns a list
     rstrip()	Returns a right trim version of the string
-    split()	Splits the string at the specified separator, and returns a list
-    splitlines()	Splits the string at line breaks and returns a list
-    startswith()	Returns true if the string starts with the specified value
-    strip()	Returns a trimmed version of the string
-    swapcase()	Swaps cases, lower case becomes upper case and vice versa
-    title()	Converts the first character of each word to upper case
-    translate()	Returns a translated string
-    upper()	Converts a string into upper case
-   
- zfill()	Fills the string with a specified number of 0 values at the beginning
+
+
+# split() |	Splits the string at the specified separator, and returns a list
+
+#  Definition and Usage
+ The split() method splits a string into a list.
+
+ You can specify the separator, default separator is any whitespace.
+
+Note: When maxsplit is specified, the list will contain the specified number of elements plus one.
+
+# Syntax
+    string.split(separator, maxsplit)
+    Parameter Values
+    Parameter	Description
+    separator	Optional. Specifies the separator to use when splitting the string. By default any whitespace is a separator
+    maxsplit	Optional. Specifies how many splits to do. Default value is -1, which is "all occurrences"
+
+# (eg):- 
+        txt = "welcome to the jungle"
+        x = txt.split()
+        print(x)
+
+# splitlines()	|  Splits the string at line breaks and returns a list
+  
+#  Definition and Usage
+   The splitlines() method splits a string into a list. The splitting is done at line breaks.
+
+#  Syntax
+   string.splitlines(keeplinebreaks)
+# (eg):- 
+        txt = "Thank you for the music\nWelcome to the jungle"
+        x = txt.splitlines()
+        print(x)
+# o/p:- ['Thank you for the music', 'Welcome to the jungle']
+
+
+# Definition and Usage
+The splitlines() method splits a string into a list. The splitting is done at line breaks.
+
+# Syntax
+string.splitlines(keeplinebreaks)
+
+
+#   startswith() |	Returns true if the string starts with the specified value
+
+# Syntax
+string.startswith(value, start, end)
+
+# (eg):-
+        txt = "Hello, welcome to my world."
+        x = txt.startswith("Hello")
+        print(x)
+
+#  strip()	Returns a trimmed version of the string
+  The strip() method removes any leading, and trailing whitespaces.
+
+  Leading means at the beginning of the string, trailing means at the end.
+
+ You can specify which character(s) to remove, if not, any whitespaces will be removed.
+
+# Syntax
+string.strip(characters)
+
+# (eg):-
+       txt = "     banana     "
+       x = txt.strip()
+       print("of all fruits", x, "is my favorite")
+
+
+#  swapcase()	Swaps cases, lower case becomes upper case and vice versa
+
+# (eg):-
+        txt = "Hello My Name Is PETER"
+        x = txt.swapcase()
+        print(x)
+
+#  title()  | Converts the first character of each word to upper case
+# The title() method returns a string where the first character in every word is upper case. Like a header, or a title.
+
+If the word contains a number or a symbol, the first letter after that will be converted to upper case.
+
+# (eg):-
+        txt = "Welcome to my 2nd world"
+        x = txt.title()
+        print(x)
+
+#  translate()  | Returns a translated string
+
+# (eg):-  
+# use a dictionary with ascii codes to replace 83 (S) with 80 (P):
+        mydict = {83:  80}
+        txt = "Hello Sam!"
+        print(txt.translate(mydict))
+
+# upper()	Converts a string into upper case 
+# (eg):-
+        txt = "Hello my friends"
+        x = txt.upper()
+        print(x)
+ 
+# zfill()	Fills the string with a specified number of 0 values at the beginning:-
+
  # (eg):-
     txt = "50"
 
     x = txt.zfill(10)
 
     print(x)
+
+# Python Booleans
+    Booleans represent one of two values: True or False.
+
+    Boolean Values
+    In programming you often need to know if an expression is True or False.
+
+    You can evaluate any expression in Python, and get one of two answers, True or False.
+
+    When you compare two values, the expression is evaluated and Python returns the Boolean answer:
+
+
+    Most Values are True
+    Almost any value is evaluated to True if it has some sort of content.
+
+    Any string is True, except empty strings.
+
+    Any number is True, except 0.
+
+    Any list, tuple, set, and dictionary are True, except empty ones
+
+# (eg):- 
+        bool("abc")
+        bool(123)
+        bool(["apple", "cherry", "banana"])
