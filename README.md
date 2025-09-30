@@ -637,3 +637,292 @@ If the word contains a number or a symbol, the first letter after that will be c
         bool("abc")
         bool(123)
         bool(["apple", "cherry", "banana"])
+
+
+# List 
+Lists are used to store multiple items in a single variable.
+Lists are created using square brackets:
+
+# Example  
+Create a List:
+
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+
+The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+Since lists are indexed, lists can have items with the same value:
+
+# Python Collections (Arrays)
+There are four collection data types in the Python programming language:
+
+# List is a collection which is ordered and changeable. Allows duplicate members.
+# Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+# Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+# Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+* Set items are unchangeable, but you can remove and/or add items whenever you like.
+
+** As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
+
+
+# This example returns the items from the beginning to, but NOT including, "kiwi":
+
+# Access Items
+List items are indexed and you can access them by referring to the index number:
+
+# (eg):-  Print the second item of the list:
+
+thislist = ["apple", "banana", "cherry"]
+print(thislist[1])
+
+# Negative Indexing
+Negative indexing means start from the end
+
+-1 refers to the last item, -2 refers to the second last item etc.
+
+# Range of Indexes
+You can specify a range of indexes by specifying where to start and where to end the range.
+
+When specifying a range, the return value will be a new list with the specified items.
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[:4])
+
+# Change Item Value
+To change the value of a specific item, refer to the index number:
+
+Change the second item:
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+# Change a Range of Item Values
+To change the value of items within a specific range, define a list with the new values, and refer to the range of index numbers where you want to insert the new values:
+
+# Example:- 
+Change the values "banana" and "cherry" with the values "blackcurrant" and "watermelon":
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+# Insert Items
+To insert a new list item, without replacing any of the existing values, we can use the insert() method.
+
+The insert() method inserts an item at the specified index:
+
+# (ex):-
+        thislist = ["apple", "banana", "cherry"]
+        thislist.insert(2, "watermelon")
+        print(thislist) 
+
+# append items:- 
+append - thislist.append("orange")
+insert - thislist.insert(1, "orange")
+
+Extend List
+To append elements from another list to the current list, use the extend() method.
+
+# (eg):-
+       thislist = ["apple", "banana", "cherry"]
+       tropical = ["mango", "pineapple", "papaya"]
+       thislist.extend(tropical)
+       print(thislist)
+
+# Add Any Iterable
+The extend() method does not have to append lists, you can add any iterable object (tuples, sets, dictionaries etc.).
+
+# Example
+Add elements of a tuple to a list:
+
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist)
+
+# remove specified items in list
+
+1. The remove() method removes the specified item.
+
+2. The pop() method removes the specified index.
+
+The del keyword also removes the specified index:
+del thislist[0]
+
+# Clear the List
+The clear() method empties the list.
+
+The list still remains, but it has no content.
+
+# Example:-
+Clear the list content:
+
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print(thislist)
+
+# how to access list items 
+  # index
+  # negative index
+  # range index
+  # in
+  
+# change list items
+ # use index
+ # ranged
+ # inset items
+
+# add list items
+  # append()
+  # insert items 
+  # expend items - any iterable
+
+# remove list items 
+  1. remove
+  2. pop()
+  3. del
+
+# python list though loop
+  
+  1. for in 
+
+# Loop though the index number
+   for i in range(len(thislist))
+
+# while loop 
+
+# Example
+ Print all items, using a while loop to go through all the index numbers
+
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+# Looping Using List Comprehension
+List Comprehension offers the shortest syntax for looping through lists:
+
+# Example:- 
+ A short hand for loop that will print all items in a list:
+
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+# Python - List Comprehension
+
+# The Syntax;- 
+   # newlist = [expression for item in iterable if condition == True]
+
+# Condition
+    The condition is like a filter that only accepts the items that evaluate to True.
+ 
+  # example:-
+    newlist = [x for x in fruits if x != "apple"]
+
+# Iterable
+The iterable can be any iterable object, like a list, tuple, set etc.
+
+# Example
+You can use the range() function to create an iterable:
+
+newlist = [x for x in range(10)]
+
+# Python - Sort Lists
+
+  # Sort() 
+           List objects have a sort() method that will sort the list alphanumerically, ascending, by default:
+
+  # Sort Descending
+           To sort descending, use the keyword argument reverse = True:
+
+ # Example :-  thislist.sort(reverse = True) 
+
+# Customize Sort Function
+
+def myfunc(n):
+    return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+
+# Case Insensitive Sort
+    By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters:
+
+# example
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort()
+print(thislist)
+
+Luckily we can use built-in functions as key functions when sorting a list.
+
+So if you want a case-insensitive sort function, use str.lower as a key function:
+
+# Example
+Perform a case-insensitive sort of the list:
+
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower)
+print(thislist)
+
+# Reverse Order 
+  use reverse() sort the list in reverse order 
+
+# PYTHON Copy Lists 
+
+# Copy a list
+ You can use the built-in List method copy() to copy a list.
+
+ # eg:-
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+# o/p ['apple', 'banana', 'cherry']
+
+# Use the list() method same as copy list
+
+# Use the slice Operator
+  
+ 1. You can also make a copy of a list by using the : (slice) operator.
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist[:]
+print(mylist)
+
+# o/p:-  ['apple', 'banana', 'cherry']
+
+PYTHON - Join lists :- 
+ 
+ list3 = list1 + list2
+
+One of the easiest ways are by using the + operator.
+
+# ex:-
+for x in list2:
+  list1.append(x)
+
+
+
+# Method	Description
+# append()	Adds an element at the end of the list
+# clear()	Removes all the elements from the list
+# copy()	Returns a copy of the list
+# count()	Returns the number of elements with the specified value
+# extend()	Add the elements of a list (or any iterable), to the end of the current list
+# index()	Returns the index of the first element with the specified value
+# insert()	Adds an element at the specified position
+# pop()	Removes the element at the specified position
+# remove()	Removes the item with the specified value
+# reverse()	Reverses the order of the list
+# sort()	Sorts the list
+
+# Python Tuples:-
+
+1. Tuples are used to store multiple items in a single variable.
+2. A tuple is a collection which is ordered and unchangeable.
+3. Tuples are written with round brackets.
+
+# example
