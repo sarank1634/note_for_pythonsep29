@@ -1452,5 +1452,221 @@ union()	|	Returns a new frozenset containing the union
 
 
   union()	   |	Return a set containing the union of sets
-  
+
   update()	 |=	   Update the set with the union of this set and others
+
+# Dictionary:-
+
+   # Dictionaries are used to store data values in key:value pairs.
+
+   #  A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+
+   #   Dictionary items are ordered, changeable, and do not allow duplicates.
+
+  #  Dictionary items are presented in key:value pairs, and can be referred to by using the key name.
+
+ # Eg:-
+       As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered. 
+
+# Dictionary Length
+       To determine how many items a dictionary has, use the len() function:
+
+# Dictionary Items - Data Types
+       The values in dictionary items can be of any data type:
+
+# The dict() Constructor
+        It is also possible to use the dict() constructor to make a dictionary.
+
+# Python Collections (Arrays)
+There are four collection data types in the Python programming language:
+
+#  List is a collection which is ordered and changeable. Allows duplicate members.
+
+ # Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+
+#  Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+
+#   Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+
+# Accessing Items
+        You can access the items of a dictionary by referring to its key name, inside square brackets:
+
+  # Eg:- 
+        x = thisdict["model"]
+
+  # get()
+      There is also a method called get() that will give you the same result:
+  
+  # Eg:-
+         x = thisdict.get("model")
+
+ #  Get Keys
+      The keys() method will return a list of all the keys in the dictionary.
+
+  # Eg:-
+         x = thisdict.keys()
+
+# Get Values
+      The values() method will return a list of all the values in the dictionary.
+
+# Example
+      Get a list of the values:
+
+      x = thisdict.values()
+
+# Get Items
+        The items() method will return each item in a dictionary, as tuples in a list.
+
+# Example
+    Get a list of the key:value pairs
+
+    x = thisdict.items()
+
+# Check if Key Exists
+    To determine if a specified key is present in a dictionary use the in keyword:
+
+# Example
+      Check if "model" is present in the dictionary:
+
+      thisdict = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+      }
+      if "model" in thisdict:
+        print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+# Change Values:-
+
+    You can change the value of a specific item by referring to its key name:
+
+#  eg:- 
+      thisdict["year"] = 2018
+
+# Update Dictionary
+    The update() method will update the dictionary with the items from the given argument.
+
+    The argument must be a dictionary, or an iterable object with key:value pairs.
+
+# Example
+    Update the "year" of the car by using the update() method:
+
+    thisdict = {
+      "brand": "Ford",
+      "model": "Mustang",
+      "year": 1964
+    }
+    thisdict.update({"year": 2020})
+
+#  Removing Items:- 
+ 
+ # POP():-
+         The pop() method removes the item with the specified key name:
+
+ # Eg:- 
+        thisdict.pop("model")
+ 
+# The popitem():-
+          method removes the last inserted item (in versions before 3.7, a random item is removed instead):
+      
+ #  Eg:-
+         thisdict.popitem()
+
+# del:-
+       The del keyword can also delete the dictionary completely:
+
+   #  Eg:-
+          del thisdict      
+
+# Clear():-
+           The clear() method empties the dictionary:
+      
+   # Eg:- 
+          thisdict.clear()
+
+#    Python - Loop Dictionaries
+#  Loop Through a Dictionary
+
+givrn below the methods like :-
+  
+  #  values()
+  #  keys()
+  #   items()
+
+   # Eg:- 
+          for x in thisdict:
+          print(x)
+
+          for x in thisdict.values():
+          print(x)
+    
+#  Python - Copy Dictionaries:-
+  
+  # Make a copy of a dictionary with the copy() method:
+  
+  # Eg:- 
+         mydict = thisdict.copy()
+
+  # Make a copy of a dictionary with the dict() function:
+
+  # Eg:- 
+         mydict = dict(thisdict)
+
+# Python - Nested Dictionaries
+
+#   Nested Dictionaries:- 
+      A dictionary can contain dictionaries, this is called nested dictionaries.
+
+  # Example:-
+        
+     Create a dictionary that contain three dictionaries:
+
+        myfamily = {
+          "child1" : {
+            "name" : "Emil",
+            "year" : 2004
+          },
+          "child2" : {
+            "name" : "Tobias",
+            "year" : 2007
+          },
+          "child3" : {
+            "name" : "Linus",
+            "year" : 2011
+          }
+        }
+
+  # OR
+        myfamily = {
+          "child1" : child1,
+          "child2" : child2,
+          "child3" : child3
+        }
+
+# Access Items in Nested Dictionaries
+    To access items from a nested dictionary, you use the name of the dictionaries, starting with the outer dictionary:
+
+# Example:-
+    Print the name of child 2:
+
+    print(myfamily["child2"]["name"])
+
+  # o/p:-   Tobias
+
+
+Dictionary Methods
+Python has a set of built-in methods that you can use on dictionaries.
+
+# Method	  Description
+clear()	    Removes all the elements from the dictionary
+copy()	    Returns a copy of the dictionary
+fromkeys()	Returns a dictionary with the specified keys and value
+get()     	Returns the value of the specified key
+items()   	Returns a list containing a tuple for each key value pair
+keys()    	Returns a list containing the dictionary's keys
+pop()	      Removes the element with the specified key
+popitem()	  Removes the last inserted key-value pair
+setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	  Updates the dictionary with the specified key-value pairs
+values()	  Returns a list of all the values in the dictionary
