@@ -1670,3 +1670,626 @@ popitem()	  Removes the last inserted key-value pair
 setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
 update()	  Updates the dictionary with the specified key-value pairs
 values()	  Returns a list of all the values in the dictionary
+
+# Python If ... Else:-
+
+# Elif
+The elif keyword is Python's way of saying "if the previous conditions were not true, then try this condition".
+
+Example
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+
+# Else
+The else keyword catches anything which isn't caught by the preceding conditions.
+
+# Example:-
+          a = 200
+          b = 33
+          if b > a:
+            print("b is greater than a")
+          elif a == b:
+            print("a and b are equal")
+          else:
+            print("a is greater than b")
+      
+# You can also have an else without the elif:
+
+# Example:-
+          a = 200
+          b = 33
+          if b > a:
+            print("b is greater than a")
+          else:
+            print("b is not greater than a")
+
+# Short Hand If:-
+                  if a > b: print("a is greater than b")
+        
+# Short Hand If ... Else
+          If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:
+
+# Example
+          One line if else statement:
+
+          a = 2
+          b = 330
+          print("A") if a > b else print("B")
+
+# This technique is known as Ternary Operators, or Conditional Expressions.
+
+You can also have multiple else statements on the same line:
+
+# Example:-
+        One line if else statement, with 3 conditions:
+
+            a = 330
+            b = 330
+            print("A") if a > b else print("=") if a == b else print("B")
+
+# And
+The and keyword is a logical operator, and is used to combine conditional statements:
+
+# Example:-
+          Test if a is greater than b, AND if c is greater than a:
+
+          a = 200
+          b = 33
+          c = 500
+          if a > b and c > a:
+            print("Both conditions are True")
+      
+# Or
+    The or keyword is a logical operator, and is used to combine conditional statements:
+
+# Example
+Test if a is greater than b, OR if a is greater than c:
+
+    a = 200
+    b = 33
+    c = 500
+    if a > b or a > c:
+      print("At least one of the conditions is True")
+
+# Nested If
+You can have if statements inside if statements, this is called nested if statements.
+
+# Example
+x = 41
+
+if x > 10:
+  print("Above ten,")
+  if x > 20:
+    print("and also above 20!")
+  else:
+    print("but not above 20.")
+
+
+# The match statement is used to perform different actions based on different conditions.
+
+# The Python Match Statement
+Instead of writing many if..else statements, you can use the match statement.
+
+The match statement selects one of many code blocks to be executed.
+
+# match expression:
+  case x:
+    code block
+  case y:
+    code block
+  case z:
+    code block
+
+# Syntax:-
+          match expression:
+          case x:
+            code block
+          case y:
+            code block
+          case z:
+            code block
+
+# Example
+day = 4
+match day:
+  case 1:
+    print("Monday")
+  case 2:
+    print("Tuesday")
+  case 3:
+    print("Wednesday")
+  case 4:
+    print("Thursday")
+  case 5:
+    print("Friday")
+  case 6:
+    print("Saturday")
+  case 7:
+    print("Sunday")
+
+# Default Value:-
+      Use the underscore character _ as the last case value if you want a code block to execute when there are not other matches:
+
+# Example:-
+          day = 4
+          match day:
+            case 6:
+              print("Today is Saturday")
+            case 7:
+              print("Today is Sunday")
+            case _:
+              print("Looking forward to the Weekend")
+
+# Combine Values:-
+  # Use the pipe character | as an or operator in the case evaluation to check for more than one value match in one case:
+
+# Example
+day = 4
+match day:
+  case 1 | 2 | 3 | 4 | 5:
+    print("Today is a weekday")
+  case 6 | 7:
+    print("I love weekends!")
+
+# Python While Loops:-
+
+ Python Loops:-
+        Python has two primitive loop commands:
+
+        while loops
+        for loops
+    
+#  The break Statement
+      With the break statement we can stop the loop even if the while condition is true:
+
+  # Example:-
+          Exit the loop when i is 3:
+
+          i = 1
+          while i < 6:
+            print(i)
+            if i == 3:
+              break
+            i += 1
+#   The continue Statement
+    With the continue statement we can stop the current iteration, and continue with the next:
+
+#  Example
+      Continue to the next iteration if i is 3:
+
+      i = 0
+      while i < 6:
+        i += 1
+        if i == 3:
+          continue
+        print(i)
+
+#  The else Statement:-
+     With the else statement we can run a block of code once when the condition no longer is true:
+
+# Example
+   Print a message once the condition is false:
+
+      i = 1
+      while i < 6:
+        print(i)
+        i += 1
+      else:
+        print("i is no longer less than 6")
+
+#  Python For Loops:-
+       
+   A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+      
+   This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
+
+    With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
+
+# Looping Through a String Example:-
+        for x in "banana":
+          print(x)
+
+# The break Statement
+With the break statement we can stop the loop before it has looped through all the items:
+
+# Example:-
+            fruits = ["apple", "banana", "cherry"]
+            for x in fruits:
+              print(x)
+              if x == "banana":
+                break
+
+# The continue Statement:-
+    With the continue statement we can stop the current iteration of the loop, and continue with the next:
+
+# Example:-
+          fruits = ["apple", "banana", "cherry"]
+          for x in fruits:
+            if x == "banana":
+              continue
+            print(x)
+          
+# The range() Function
+To loop through a set of code a specified number of times, we can use the range() function,
+
+The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
+
+# Example:-
+Using the range() function:
+
+for x in range(6):
+  print(x)
+
+# Else in For Loop
+  The else keyword in a for loop specifies a block of code to be executed when the loop is finished:
+
+# Example
+  Print all numbers from 0 to 5, and print a message when the loop has ended:
+
+      for x in range(6):
+        print(x)
+      else:
+        print("Finally finished!")
+
+# Nested Loops
+    A nested loop is a loop inside a loop.
+
+    The "inner loop" will be executed one time for each iteration of the "outer loop":
+
+#  Example:-
+      Print each adjective for every fruit:
+
+      adj = ["red", "big", "tasty"]
+      fruits = ["apple", "banana", "cherry"]
+
+      for x in adj:
+        for y in fruits:
+          print(x, y)
+
+# The pass Statement:-
+    for loops cannot be empty, but if you for some reason have a for loop with no content, put in the pass statement to avoid getting an error.
+
+#  Example
+      for x in [0, 1, 2]:
+        pass
+
+# Python Functions:-
+          
+    A function is a block of code which only runs when it is called.
+
+    You can pass data, known as parameters, into a function.
+
+    A function can return data as a result.
+
+
+# Creating a Function:-
+        In Python a function is defined using the def keyword:
+
+# Calling a Function
+ To call a function, use the function name followed by parenthesis:
+
+# Example
+      def my_function():
+        print("Hello from a function")
+
+      my_function()
+
+# Arguments:-
+      Information can be passed into functions as arguments.
+
+      Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
+
+      The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name:
+
+# Example:-
+      def my_function(fname):
+        print(fname + " Refsnes")
+
+      my_function("Emil")
+      my_function("Tobias")
+      my_function("Linus")
+
+# Parameters or Arguments?
+      The terms parameter and argument can be used for the same thing: information that are passed into a function.
+
+      From a function's perspective:
+
+      A parameter is the variable listed inside the parentheses in the function definition.
+
+      An argument is the value that is sent to the function when it is called.
+
+# Number of Arguments:-
+          By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 arguments, you have to call the function with 2 arguments, not more, and not less.
+
+# Example:-
+This function expects 2 arguments, and gets 2 arguments:
+
+def my_function(fname, lname):
+  print(fname + " " + lname)
+
+my_function("Emil", "Refsnes")
+
+# Arbitrary Arguments, *args
+    If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+
+    This way the function will receive a tuple of arguments, and can access the items accordingly:
+
+# Example
+    If the number of arguments is unknown, add a * before the parameter name:
+
+    def my_function(*kids):
+      print("The youngest child is " + kids[2])
+
+    my_function("Emil", "Tobias", "Linus")
+
+# Arbitrary Keyword Arguments, **kwargs
+      If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition.
+
+      This way the function will receive a dictionary of arguments, and can access the items accordingly:
+
+# Example
+      If the number of keyword arguments is unknown, add a double ** before the parameter name:
+
+      def my_function(**kid):
+        print("His last name is " + kid["lname"])
+
+      my_function(fname = "Tobias", lname = "Refsnes")
+
+# Passing a List as an Argument
+      You can send any data types of argument to a function (string, number, list, dictionary etc.), and it will be treated as the same data type inside the function.
+
+      E.g. if you send a List as an argument, it will still be a List when it reaches the function:
+
+# Example:-
+      def my_function(food):
+        for x in food:
+          print(x)
+
+      fruits = ["apple", "banana", "cherry"]
+
+      my_function(fruits)
+
+
+# Recursion
+      Python also accepts function recursion, which means a defined function can call itself.
+
+      Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.
+
+#  Python Decorators:-
+      Decorators let you add extra behavior to a function, without changing the function's code.
+
+      A decorator is a function that takes another function as input and returns a new function.
+
+# Basic Decorator
+    Define the decorator first, then apply it with @decorator_name above the function.
+    
+  A basic decorator that uppercases the return value of the decorated function.
+#   Example
+          def changecase(func):
+            def myinner():
+              return func().upper()
+            return myinner
+
+          @changecase
+          def myfunction():
+            return "Hello Sally"
+
+          print(myfunction())
+
+# 1. What are *args and **kwargs?
+
+They’re special syntax in Python used to pass a variable number of arguments to a function.
+
+# Type	Meaning	Example
+        *args	Used to pass any number of positional arguments (non-keyword arguments)	fun(1, 2, 3)
+
+        **kwargs	Used to pass any number of keyword arguments	fun(a=10, b=20)
+
+# Decorator With Arguments
+Decorators can accept their own arguments by adding another wrapper level.
+
+# Example
+A decorator factory that takes an argument and transforms the casing based on the argument value.
+
+        def changecase(n):
+          def changecase(func):
+            def myinner():
+              if n == 1:
+                a = func().lower()
+              else:
+                a = func().upper()
+              return a
+            return myinner
+          return changecase
+
+        @changecase(1)
+        def myfunction():
+          return "Hello Linus"
+
+        print(myfunction())
+
+# Python range
+    The built-in range() function returns an immutable sequence of numbers, commonly used for looping a specific number of times.
+
+    This set of numbers has its own data type called range.
+
+    Note: Immutable means that it cannot be modified after it is created.
+
+# Creating ranges
+The range() function can be called with 1, 2, or 3 arguments, using this syntax:
+
+range(start, stop, step)
+
+# Example :- 
+              x = range(10)
+
+# Using List to Display Ranges
+The range object is a data type that represents an immutable sequence of numbers, and it is not directly displayable.
+
+Therefore, ranges are often converted to lists for display.
+
+# Example:-
+
+      Convert different ranges to lists:
+
+      print(list(range(5)))
+      print(list(range(1, 6)))
+      print(list(range(5, 20, 3)))
+  
+# Python Lambda:-
+
+    lambda function is a small anonymous function.
+
+    A lambda function can take any number of arguments, but can only have one expression.
+
+# Syntax:-
+    lambda arguments : expression
+    The expression is executed and the result is returned:
+
+# Why Use Lambda Functions?
+    The power of lambda is better shown when you use them as an anonymous function inside another function.
+
+    Say you have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
+
+5. Where to Use Anonymous Functions
+Use Case	Example	Purpose
+🔹 Sorting	sorted(data, key=lambda x: x[1])	Sort by custom rule
+🔹 Filtering	filter(lambda x: x > 10, nums)	Keep only numbers > 10
+🔹 Mapping	map(lambda x: x*x, nums)	Apply function to each item
+🔹 Short inline logic	Inside GUI, web app, or lambda expression	Avoid defining full functions
+
+# Python Arrays:-
+     Python does not have built-in support for Arrays, but Python Lists can be used instead.
+
+# Example:-
+         cars = ["Ford", "Volvo", "BMW"]
+
+#  What is an Array?
+    An array is a special variable, which can hold more than one value at a time.
+
+    If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+
+    car1 = "Ford"
+    car2 = "Volvo"
+    car3 = "BMW"
+      However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+
+      The solution is an array!
+
+      An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+      Access the Elements of an Array
+      You refer to an array element by referring to the index number.
+
+#  Example:-
+      Get the value of the first array item:
+
+      x = cars[0]
+
+#  
+Array Methods
+Python has a set of built-in methods that you can use on lists/arrays.
+
+#  Method         	Description
+
+  append()	        Adds an element at the end of the list
+
+  clear()          	Removes all the elements from the list
+
+  copy()	           Returns a copy of the list
+
+  count()	Returns the number of elements with the specified value
+
+  extend()         	Add the elements of a list (or any iterable),   to the end of the current list
+
+  index()	        Returns the index of the first element with the specified value
+
+  insert()	        Adds an element at the specified position
+
+  pop()            	Removes the element at the specified position
+
+  remove()	        Removes the first item with the specified value
+
+  reverse()         Reverses the order of the list
+
+  sort()            Sorts the list
+
+  # Syntax:-
+
+       list.append(elmnt)
+
+       list.clear()
+
+       list.copy() -> x = fruits.copy()
+
+       list.count(value) -> x = fruits.count("cherry")
+
+       list.pop(pos)
+
+       list.reverse()
+#  Python List extend() Method:-
+
+# Definition and Usage
+        The extend() method adds the specified list elements (or any iterable) to the end of the current list.
+
+#  Syntax:-
+        list.extend(iterable)
+
+# Insert() Definition and Usage
+    The insert() method inserts the specified value at the specified position.
+
+# Example:-
+
+           Insert the value "orange" as the second element of the fruit list:
+
+          fruits = ['apple', 'banana', 'cherry']
+
+          fruits.insert(1, "orange")
+  
+ # A function that returns the length of the value:
+            def myFunc(e):
+              return len(e)
+
+            cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+
+            cars.sort(key=myFunc)
+
+            print(cars)
+
+#  Definition and Usage
+      The sort() method sorts the list ascending by default.
+
+      You can also make a function to decide the sorting criteria(s).
+
+#  Definition and Usage
+      The sort() method sorts the list ascending by default.
+
+      You can also make a function to decide the sorting criteria(s).
+
+#   Syntax
+      list.sort(reverse=True|False, key=myFunc)
+      Parameter Values
+      Parameter	Description
+      reverse	Optional. reverse=True will sort the list descending. Default is reverse=False
+      key	Optional. A function to specify the sorting criteria(s)
+
+#  What is OOP?
+    OOP stands for Object-Oriented Programming.
+
+    Python is an object-oriented language, allowing you to structure your code using classes and objects for better organization and reusability.
+
+#  Advantages of OOP:-
+
+        Provides a clear structure to programs
+
+        Makes code easier to maintain, reuse, and debug
+
+        Helps keep your code DRY (Don't Repeat Yourself)
+        Allows you to build reusable applications with less code
+
+        Tip: The DRY principle means you should avoid writing the same code more than once. Move repeated code into functions or classes and reuse it.
+
