@@ -2293,3 +2293,11 @@ Python has a set of built-in methods that you can use on lists/arrays.
 
         Tip: The DRY principle means you should avoid writing the same code more than once. Move repeated code into functions or classes and reuse it.
 
+#  Python Inheritance :- 
+
+      Inheritance allows us to define a class that inherits all the methods and properties from another class.
+
+      Parent class is the class being inherited from, also called base class.
+
+      Child class is the class that inherits from another class, also called derived class.
+
