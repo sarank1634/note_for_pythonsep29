@@ -2301,3 +2301,379 @@ Python has a set of built-in methods that you can use on lists/arrays.
 
       Child class is the class that inherits from another class, also called derived class.
 
+#   Python Polymorphism:-
+
+  The word "polymorphism" means "many forms", and in programming it refers to methods/functions/operators with the same name that can be executed on many objects or classes.
+
+#   Example
+        Create a class called Vehicle and make Car, Boat, Plane child classes of Vehicle:
+
+        class Vehicle:
+          def __init__(self, brand, model):
+            self.brand = brand
+            self.model = model
+
+          def move(self):
+            print("Move!")
+
+        class Car(Vehicle):
+          pass
+
+        class Boat(Vehicle):
+          def move(self):
+            print("Sail!")
+
+        class Plane(Vehicle):
+          def move(self):
+            print("Fly!")
+
+        car1 = Car("Ford", "Mustang")       #Create a Car object
+        boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+        plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+        for x in (car1, boat1, plane1):
+          print(x.brand)
+          print(x.model)
+          x.move()
+
+#   Local Scope
+      A variable created inside a function belongs to the local scope of that function, and can only be used inside that function.
+
+#  Python Modules:-
+
+  # What is a Module?
+
+      Consider a module to be the same as a code library.
+
+      A file containing a set of functions you want to include in your application.
+
+      Create a Module
+      To create a module just save the code you want in a file with the file extension .py:
+
+#   Variables in Module
+The module can contain functions, as already described, but also variables of all types (arrays, dictionaries, objects etc):
+
+#  Example
+            Save this code in the file mymodule.py
+
+              person1 = {
+                "name": "John",
+                "age": 36,
+                "country": "Norway"
+              }
+
+#  Example
+        Import the module named mymodule, and access the person1 dictionary:
+
+        import mymodule
+
+        a = mymodule.person1["age"]
+        print(a)
+
+# Naming a Module
+
+    You can name the module file whatever you like, but it must have the file extension .py
+
+    Re-naming a Module
+    You can create an alias when you import a module, by using the as keyword:
+
+#   Example
+
+    Create an alias for mymodule called mx:
+
+    import mymodule as mx
+
+    a = mx.person1["age"]
+    print(a)
+
+# Built-in Modules
+      There are several built-in modules in Python, which you can import whenever you like.
+
+#  Example
+      Import and use the platform module:
+
+      import platform
+
+      x = platform.system()
+      print(x)
+
+# Note: The dir() function can be used on all modules, also the ones you create yourself.
+
+#  Import From Module
+    You can choose to import only parts from a module, by using the from keyword.
+
+# Example
+      The module named mymodule has one function and one dictionary:
+
+      def greeting(name):
+        print("Hello, " + name)
+
+      person1 = {
+        "name": "John",
+        "age": 36,
+        "country": "Norway"
+      }
+
+# Example
+    Import only the person1 dictionary from the module:
+
+    from mymodule import person1
+
+    print (person1["age"])
+
+# Python Dates
+      A date in Python is not a data type of its own, but we can import a module named datetime to work with dates as date objects.
+
+# Example:- 
+
+    Import the datetime module and display the current date:
+
+        import datetime
+
+        x = datetime.datetime.now()
+        print(x)
+
+# Creating Date Objects
+    To create a date, we can use the datetime() class (constructor) of the datetime module.
+
+    The datetime() class requires three parameters to create a date: year, month, day.
+
+#  Example:-
+
+        Create a date object:
+
+        import datetime
+
+        x = datetime.datetime(2020, 5, 17)
+
+        print(x)
+
+#  The strftime() Method
+        The datetime object has a method for formatting date objects into readable strings.
+
+        The method is called strftime(), and takes one parameter, format, to specify the format of the returned string:
+
+#   Example:-
+
+        Display the name of the month:
+
+        import datetime
+
+        x = datetime.datetime(2018, 6, 1)
+
+        print(x.strftime("%B"))
+        A reference of all the legal format codes:
+
+# Directive	  Description	                       Example	
+
+%a	            Weekday, short version	            Wed	
+
+%A	            Weekday, full version           	  Wednesday	
+
+%w	            Weekday as a number 0-6, 0 is Sunday	3
+
+%d	            Day of month 01-31                  	31	
+
+%b	            Month name, short version	            Dec	
+
+%B	            Month name, full version            	December	
+
+%m	            Month as a number 01-12	              12	
+
+%y	            Year, short version, without century	18	
+
+%Y	            Year, full version	                   2018	
+
+%H	             Hour 00-23	                           17	
+
+%I	            Hour 00-12	                           05	
+
+%p	            AM/PM	                                 PM	
+
+%M            	Minute 00-59                         	41	
+
+%S	            Second 00-59	                         08	
+
+%f             	Microsecond 000000-999999	             548513	
+
+%z	            UTC offset	                           +0100	
+
+%Z	            Timezone                              	CST	
+
+%j	            Day number of year 001-366	            365	
+
+%U	Week number of year, Sunday as the first day of week, 00-53	52	
+
+%W	Week number of year, Monday as the first day of week, 00-53	52	
+
+%c	Local version of date and time	Mon Dec 31 17:41:00 2018	
+
+%C	             Century	                            20	
+
+%x	              Local version of date             	12/31/18	
+
+%X	             Local version of time	              17:41:00	
+
+%%	             A % character	                       %	
+
+
+%G              	ISO 8601 year	                      2018	
+
+%u	              ISO 8601 weekday (1-7)                	1
+
+%V	              ISO 8601 weeknumber (01-53)	          01
+
+#  Python Math:-
+
+    Python has a set of built-in math functions, including an extensive math module, that allows you to perform mathematical tasks on numbers.
+
+    Built-in Math Functions
+    The min() and max() functions can be used to find the lowest or highest value in an iterable:
+
+#  Example:-
+     
+      x = min(5, 10, 25)
+      y = max(5, 10, 25)
+
+      print(x)
+      print(y)
+
+#     The abs() function returns the absolute (positive) value of   the specified number:
+
+# Example:-
+
+    x = abs(-7.25)
+
+    print(x)
+
+#  The pow(x, y) function returns the value of x to the power of y (xy).
+
+# Example:-
+        Return the value of 4 to the power of 3 (same as 4 * 4 * 4):
+
+        x = pow(4, 3)
+
+        print(x)
+
+#   The Math Module:-
+
+      Python has also a built-in module called math, which extends the list of mathematical functions.
+
+      To use it, you must import the math module:
+
+      import math
+      When you have imported the math module, you can start using methods and constants of the module.
+
+      The math.sqrt() method for example, returns the square root of a number:
+
+#  Example:-
+
+      import math
+
+      x = math.sqrt(64)
+
+      print(x)
+
+The math.ceil() method rounds a number upwards to its nearest integer, and the math.floor() method rounds a number downwards to its nearest integer, and returns the result:
+
+# Example:-
+
+      import math
+
+      x = math.ceil(1.4)
+      y = math.floor(1.4)
+
+      print(x) # returns 2
+      print(y) # returns 1
+      The math.pi constant, returns the value of PI (3.14...):
+
+# Example:-
+
+        import math
+
+        x = math.pi
+
+        print(x)
+
+#  Python JSON:-
+
+# JSON is a syntax for storing and exchanging data.
+
+      JSON is text, written with JavaScript object notation.
+
+#  JSON in Python:-
+
+      Python has a built-in package called json, which can be used to work with JSON data.
+
+# Parse JSON - Convert from JSON to Python
+      If you have a JSON string, you can parse it by using the json.loads() method.
+
+      The result will be a Python dictionary.
+
+      Example
+      Convert from JSON to Python:
+
+      import json
+
+      # some JSON:
+      x =  '{ "name":"John", "age":30, "city":"New York"}'
+
+      # parse x:
+      y = json.loads(x)
+
+      # the result is a Python dictionary:
+      print(y["age"])
+
+#  Convert from Python to JSON:- 
+
+      If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
+
+#  Example:-
+        Convert from Python to JSON:
+
+        import json
+
+        # a Python object (dict):
+        x = {
+          "name": "John",
+          "age": 30,
+          "city": "New York"
+        }
+
+        # convert into JSON:
+        y = json.dumps(x)
+
+        # the result is a JSON string:
+        print(y)
+
+
+    When you convert from Python to JSON, Python objects are converted into the JSON (JavaScript) equivalent:
+
+      Python	JSON
+      dict	Object
+      list	Array
+      tuple	Array
+      str	String
+      int	Number
+      float	Number
+      True	true
+      False	false
+      None	null
+
+# Format the Result:-
+
+    The example above prints a JSON string, but it is not very easy to read, with no indentations and line breaks.
+
+    The json.dumps() method has parameters to make it easier to read the result:
+
+#  Example:-
+
+     Use the indent parameter to define the numbers of indents:
+
+    json.dumps(x, indent=4)
+    You can also define the separators, default value is (", ", ": "), which means using a comma and a space to separate each object, and a colon and a space to separate keys from values:
+
+# Example:-
+      Use the separators parameter to change the default separator:
+
+      json.dumps(x, indent=4, separators=(". ", " = "))
