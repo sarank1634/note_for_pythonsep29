@@ -39,18 +39,33 @@
 
 # print(student.fullname, student.Rollno, student.standrd)
 
+# class Person:
+#     def __init__(self,fname, lname):
+#         self.first_name = fname
+#         self.last_name = lname
 
+#     def printname(self):
+#        print(self.first_name, self.last_name)
 
+# x = Person("ram","kumar")
+# x.printname()
 
-class Person:
-    def __init__(self,fname, lname):
-        self.first_name = fname
-        self.last_name = lname
+try:
+    # Code that may cause an error
+    x = int(input("Enter a number: "))
+    result = 10 / x
+except ZeroDivisionError:
+    # Runs if division by zero happens
+    print("You can’t divide by zero!")
+except ValueError:
+    # Runs if input is not a number
+    print("Please enter a valid number!")
+else:
+    # Runs only if there is NO error
+    print("Division successful! Result:", result)
+finally:
+    # Runs no matter what
+    print("End of program.")
 
-    def printname(self):
-       print(self.first_name, self.last_name)
-
-x = Person("ram","kumar")
-x.printname()
 
         

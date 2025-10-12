@@ -2677,3 +2677,257 @@ The math.ceil() method rounds a number upwards to its nearest integer, and the m
       Use the separators parameter to change the default separator:
 
       json.dumps(x, indent=4, separators=(". ", " = "))
+
+# Python JSON:-
+
+      JSON is a syntax for storing and exchanging data.
+
+      JSON is text, written with JavaScript object notation.
+
+      JSON in Python
+      Python has a built-in package called json, which can be used to work with JSON data.
+
+#  Example:-
+     
+          Import the json module:
+
+          import json
+
+#  Parse JSON - Convert from JSON to Python:-
+
+          If you have a JSON string, you can parse it by using the json.loads() method.
+
+          The result will be a Python dictionary.
+
+#   Example:-
+
+            Convert from JSON to Python:
+
+            import json
+
+            # some JSON:
+            x =  '{ "name":"John", "age":30, "city":"New York"}'
+
+            # parse x:
+            y = json.loads(x)
+
+            # the result is a Python dictionary:
+            print(y["age"])
+
+#  Convert from Python to JSON:-
+
+        If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
+
+#  Example:-
+
+        Convert from Python to JSON:
+
+        import json
+
+        # a Python object (dict):
+        x = {
+          "name": "John",
+          "age": 30,
+          "city": "New York"
+        }
+
+        # convert into JSON:
+        y = json.dumps(x)
+
+        # the result is a JSON string:
+        print(y)
+      
+#  When you convert from Python to JSON, Python objects are converted into the JSON (JavaScript) equivalent:
+
+          Python	JSON
+          dict	Object
+          list	Array
+          tuple	Array
+          str	String
+          int	Number
+          float	Number
+          True	true
+          False	false
+          None	null
+
+# Format the Result
+      The example above prints a JSON string, but it is not very easy to read, with no indentations and line breaks.
+
+      The json.dumps() method has parameters to make it easier to read the result:
+
+# Example:-
+
+      Use the indent parameter to define the numbers of indents:
+
+      json.dumps(x, indent=4)
+      You can also define the separators, default value is (", ", ": "), which means using a comma and a space to separate each object, and a colon and a space to separate keys from values:
+
+#  Example:-
+
+      Use the separators parameter to change the default separator:
+
+      json.dumps(x, indent=4, separators=(". ", " = "))
+      Order the Result
+      The json.dumps() method has parameters to order the keys in the result:
+
+#    Example:-
+
+        Use the sort_keys parameter to specify if the result should be sorted or not:
+
+        json.dumps(x, indent=4, sort_keys=True)
+
+#  Python RegEx:-
+
+   A RegEx, or Regular Expression, is a sequence of characters that forms a search pattern.
+
+    RegEx can be used to check if a string contains the specified search pattern.
+
+# RegEx Module:-
+
+        Python has a built-in package called re, which can be used to work with Regular Expressions.
+
+  #       Import the re module:-
+
+  #   Example:- 
+       
+         Search the string to see if it starts with "The" and ends with "Spain":
+
+          import re
+
+          txt = "The rain in Spain"
+          x = re.search("^The.*Spain$", txt)
+
+#  RegEx Functions
+      The re module offers a set of functions that allows us to search a string for a match:
+
+#  Function	      Description
+      findall   	Returns a list containing all matches
+
+      search    	Returns a Match object if there is a match 
+                   anywhere in the string
+
+      split     	Returns a list where the string has been split at 
+                    each match
+
+      sub	          Replaces one or many matches with a string
+
+#   Metacharacters
+  Metacharacters are characters with a special meaning:
+
+#  Character	Description         	Example 
+
+   []	         A set of characters	"[a-m]"	
+
+  \  	Signals a special sequence (can also be used to escape special characters)	               "\d"
+    
+    .	Any character (except newline character)	"he..o"	
+
+    ^	Starts with	"^hello"	
+
+    $	Ends with	"planet$"	
+
+    *	Zero or more occurrences	"he.*o"	
+
+    +	One or more occurrences	"he.+o"	
+
+    ?	Zero or one occurrences	"he.?o"	
+
+    {}	Exactly the specified number of occurrences	"he.{2}o"	
+
+    |	Either or	"falls|stays"
+
+#  Python PIP:-
+
+  # What is PIP?
+
+        PIP is a package manager for Python packages, or modules if you like.
+
+# Note: If you have Python version 3.4 or later, PIP is included by default.
+
+# What is a Package?
+
+          A package contains all the files you need for a module.
+
+         Modules are Python code libraries you can include in your project.
+
+# Check if PIP is Installed:-
+
+     Navigate your command line to the location of Python's script directory, and type the following:
+
+#  Example:-
+    
+   Check PIP version:
+
+C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>pip --version
+
+# Download a Package:-
+
+      Downloading a package is very easy.
+
+      Open the command line interface and tell PIP to download the package you want.
+
+      Navigate your command line to the location of Python's script directory, and type the following:
+
+# Example:- 
+
+        Download a package named "camelcase":
+
+        C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>pip install camelcase
+
+# Using a Package:-
+
+        Once the package is installed, it is ready to use.
+
+        Import the "camelcase" package into your project.
+
+# Example:-
+
+      Import and use "camelcase":
+
+      import camelcase
+
+      c = camelcase.CamelCase()
+
+      txt = "hello world"
+
+      print(c.hump(txt))
+      Find Packages
+      Find more packages at https://pypi.org/.
+
+# Remove a Package:-
+
+     Use the uninstall command to remove a package:
+
+# Example:-
+
+      Uninstall the package named "camelcase":
+
+      C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>pip uninstall camelcase
+      The PIP Package Manager will ask you to confirm that you want to remove the camelcase package:
+
+      Uninstalling camelcase-02.1:
+        Would remove:
+          c:\users\Your Name\appdata\local\programs\python\python36-32\lib\site-packages\camelcase-0.2-py3.6.egg-info
+          c:\users\Your Name\appdata\local\programs\python\python36-32\lib\site-packages\camelcase\*
+      Proceed (y/n)?
+      Press y and the package will be removed.
+
+#  List Packages:-
+
+    Use the list command to list all the packages installed on your system:
+
+# Example:-
+
+  List installed packages:
+
+  C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>pip list
+
+  # Python Try Except:-
+
+    The try block lets you test a block of code for errors.
+
+    The except block lets you handle the error.
+
+    The else block lets you execute code when there is no error.
+
+    The finally block lets you execute code, regardless of the result of the try- and except blocks
